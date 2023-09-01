@@ -1,0 +1,176 @@
+---
+title: "Test Morphométrie"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+## Packages
+
+```{r}
+source(here::here("scripts", "boot.R"))
+source(here("scripts", "FUN_evplot.R"))
+source(here("scripts", "FUN_chc2out.R"))
+```
+
+## Imports
+
+* shape_majoidea : shape madi & karu (oui je sais faut que je les trie)
+* crabes LD : essai sur 7 crabes avec 1 et 8 ème points = fixed landmarks
+
+
+```{r}
+crabes_landmarks <- readland.tps(
+  file = here(
+    "data", 
+    "tidy", 
+    "majoidea_tps_test.tps"
+  ),
+  specID = "ID" 
+)
+
+cl1 <- crabes_landmarks[, , 1]
+cl2 <- crabes_landmarks[, , 2]
+cl3 <- crabes_landmarks[, , 3]
+cl4 <- crabes_landmarks[, , 4]
+cl5 <- crabes_landmarks[, , 5]
+cl6 <- crabes_landmarks[, , 6]
+cl7 <- crabes_landmarks[, , 7]
+
+plot(cl1)
+points(cl3, col = "red", add = TRUE)
+
+shape_initial <- chc2Out(
+  chc = here(
+    "data", 
+    "tidy", 
+    "shape_majoidea.chc"
+  ), 
+  skip = 10
+)
+```
+
+## Essais Momocs 
+
+### essais avec les shapes qu'on a déjà
+
+Pour rappel :
+
+```{r}
+panel(shape_initial)
+```
+
+On échantillonne 200 points sur chaque forme :
+
+```{r}
+test <- coo_sample(shape_initial, 300) 
+
+panel(test)
+```
+
+Exemple de si on prend 10 points (c'est moche) :
+
+```{r}
+dix <- coo_sample(shape_initial, 15) 
+
+panel(dix)
+```
+
+Maintenant on sélectionne nos 2 *fixed landmarks* et c'est là où je pleure parce qu'il y a un décalage au niveau du curseur puis que bon, pour trouver exactement où es pattes s'insèrent, c'est la galère. (le code marche pas sur Rmarkdown donc je te mets la fonction puis le graph correspondant)
+
+```{r}
+n <- test %>% 
+  Momocs::slice(c(1, 3, 5))
+n2 <- n %>% 
+  # coo_center() %>% 
+  coo_scale()
+coo_plot(n2[1])
+pile(n2)
+test2 <- def_ldk(n2, nb.ldk = 20, close = TRUE)
+ldk_plot(test2[1])
+Momocs::get_ldk(test2)
+ldk_plot(test2[1])
+points(get_ldk(test2)[[1]], col = "red")
+
+m <- shape_initial %>% 
+  Momocs::slice(c(1, 3, 5))
+m2 <- m %>% 
+  coo_center() %>%
+  coo_scale()
+coo_plot(m2[1])
+pile(m2)
+test2 <- def_ldk(m2, nb.ldk = 2, close = TRUE)
+ldk_plot(test2[1])
+Momocs::get_ldk(test2)
+ldk_plot(test2[1])
+points(get_ldk(test2)[[1]], col = "red")
+def_slidings(
+  test2,
+  slidings = 100
+)
+```
+
+
+![graph](C:/Users/gmaniel04/Desktop/semilandmark_test/Rplot.png)
+Et en gros on les voit apparaître en rouge et c'est ultra décalé (zuper). 
+
+Après je bloque parce qu'en gros, comme les landmarks que l'on a défini change de coordonnées pour chaque shape, c'est la merde pour déclarer lesquels on peut faire slider. Sinon il y avait une autre fonction mais qui marche avec 3 landmarks fixés minimum donc à voir ?
+
+Fonctions testées :
+
+```{r}
+fgProcrustes(test2) #là faut 3 LDF
+
+# pour définir sliding ce serait ça 
+
+def_slidings() 
+#puis après : 
+fgsProcrustes()
+```
+
+
+### essais avec les crabes tests
+
+Pas réussi avec Momocs (mais j'arrivais à faire des trucs hier du coup chelou ??)
+
+pour importer : 
+```{r}
+cracrabz <- import_tps(tps.path="C:/Users/gmaniel04/Desktop/semilandmark_test/majoidea_tps_test.tps", curves = F)
+```
+
+## Essais GEOMORPH
+
+Les formes des crabes sont pas complètes parce que j'ai du enlever des points manuellement pour avoir le même nombre partout, osef c'est un test.
+
+```{r}
+plotAllSpecimens(crabes_landmarks)
+```
+
+
+Normalement on devrait cliquer sur les points qu'on veut faire slider mais ça marche pas...
+```{r}
+test_a <- define.sliders(
+  crabes_landmarks, 
+  nsliders = 2, 
+  surfsliders = NULL
+)
+```
+
+Du coup autre truc (sacant qu'on a 43 points et 1 et 8 èmes points sont fixés)
+
+```{r}
+sliders = rbind(define.sliders(1:8), define.sliders(8:43))
+
+B <- gpagen(crabes_landmarks,
+            curves=sliders,
+            ProcD=FALSE, print.progress = FALSE)
+
+summary(B)
+```
+
+```{r}
+plot(B)
+
+```
+C'est moche, j'ai pas l'impression d'avoir avancé de fou, argzzz.

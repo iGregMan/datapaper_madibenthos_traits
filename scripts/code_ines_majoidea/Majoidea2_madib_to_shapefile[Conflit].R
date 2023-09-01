@@ -1,0 +1,7 @@
+install.packages("foreign")
+library(foreign)
+library(tydiverse)
+library(dplyr)
+setwd("C:/Users/Salomé/Google Drive/ATER/Stages/Ines_Normand_Chebbi/Database/majoidea2")
+data<-as_tibble(read.dbf("majoidea2_Madib.dbf"))
+names(data)

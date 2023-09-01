@@ -1,0 +1,66 @@
+﻿Famille;Genre;Espece;peu_profond;moyennement_profond;profond;largeur;rapp_lon_larg;forme_carapace;pics_carapace;division _rostre;longueur_rostre;largeur_chelipede;longueur_chelipede;forme_pattes;rapport_long_pince_pattes;ornementation_pattes
+Epialtidae;Acanthonyx;petiverii;1;0;0;[11 - 16];0.9 - 1.2;pentagole;absence;2;court;charnu;court;charnues;plus courte;presence
+Epialtidae;Chorinus;heros;1;1;0;[30 - 80];1.2 - 1.6;ovoide;presence laterale;2;court;charnu;long;charnues;plus longue;presence
+Epialtidae;Epialtus;bituberculatus;1;0;0;[0 - 11];1.2 - 1.6;pentagole;absence;1;court;charnu;court;charnues;meme longueur;presence
+Epialtidae;Epialtus;dilatatus;1;0;0;[0 - 11];1.2 - 1.6;pentagole;absence;2;court;fort;long;charnues;plus longue;absence
+Epialtidae;Epialtus;longirostris;1;1;0;[0 - 11];1.2 - 1.6;pentagole;absence;1;court;fort;long;charnues;plus longue;presence
+Epialtidae;Epialtus;portoricensis;1;0;0;[0 - 11];1.2 - 1.6;pentagole;absence;1;court;fort;long;charnues;plus longue;absence
+Epialtidae;Epialtus;sulcirostris;1;0;0;[0 - 11];1.2 - 1.6;ovoide;absence;1;court;fort;court;charnues;plus courte;presence
+Epialtidae;Herbstia;camptacantha;1;0;0;[16 - 30];0.9 - 1.2;ovale;presence;2;court;fort;long;charnues;plus longue;presence
+Epialtidae;Herbstia;edwardsii;1;0;0;[11 - 16];0.9 - 1.2;ovale;absence;2;court;fort;long;charnues;plus longue;presence
+Epialtidae;Macrocoeloma;diplacanthum;1;0;0;[16 - 30];1.2 - 1.6;triangulaire;absence;2;long;charnu;court;charnues;meme longueur;presence
+Epialtidae;Macrocoeloma;eutheca;1;1;1;[11 - 16];1.6 - 2;triangulaire;absence;2;court;charnu;long;charnues;plus longue;
+Epialtidae;Macrocoeloma;laevigatum;1;1;0;[11 - 16];1.6 - 2;ovoide;absence;2;court;fort;long;charnues;plus longue;presence
+Epialtidae;Macrocoeloma;nodipes;1;1;0;[30 - 80];0.9 - 1.2;triangulaire;absence;2;court;charnu;long;charnues;meme longueur;presence
+Epialtidae;Macrocoeloma;subparellelum;1;0;0;[30 - 80];0.9 - 1.2;triangulaire;absence;2;court;charnu;court;charnues;meme longueur;presence
+Epialtidae;Macrocoeloma;trispinosum;1;1;0;[16 - 30];1.2 - 1.6;triangulaire;absence;2;court;charnu;court;charnues;plus longue;presence
+Epialtidae;Microlissa;bicarita;1;1;0;[0 - 11];0.9 - 1.2;triangulaire;absence;2;court;fort;court;charnues;plus longue;
+Epialtidae;Microlissa;brasiliensis;1;1;0;[11 - 16];0.9 - 1.2;triangulaire;absence;2;court;fort;court;;;
+Epialtidae;Notolopas;brasiliensis;1;0;0;[0 - 11];1.2 - 1.6;ronde;absence;2;long;fort;long;charnues;meme longueur;
+Epialtidae;Pelia;mutica;1;1;0;[0 - 11];1.2 - 1.6;ovoide;absence;2;court;charnu;court;larges;plus courte;presence
+Epialtidae;Pelia;rotunda;1;1;0;[11 - 16];1.2 - 1.6;ovoide;absence;2;court;charnu;court;larges;plus courte;presence
+Epialtidae;Picroceroides;tubularis;1;1;0;[11 - 16];1.2 - 1.6;ovoide;absence;2;long;charnu;long;minces;plus longue;presence
+Epialtidae;Tyche;emargita;1;1;0;[16 - 30];1.6 - 2;en 8;absence;2;court;fort;long;charnues;plus courte;presence
+Epialtidae;Tyche;lamellifrons;1;0;0;[11 - 16];1.2 - 1.6;en 8;absence;2;court;charnu;court;minces;plus courte;presence
+Ichidae;Coryrhynchus;algicola;1;1;0;[11 - 16];1.2 - 1.6;triangulaire;absence;1;court;charnu;long;minces;plus courte;presence
+Ichidae;Coryrhynchus;lamelligerus;0;1;0;[11 - 16];1.2 - 1.6;triangulaire;absence;1;court;mince;long;minces;plus courte;presence
+Ichidae;Coryrhynchus;riisei;1;1;0;[16 - 30];1.2 - 1.6;triangulaire;absence;1;variable;charnu;court;minces;plus courte;presence
+Ichidae;Coryrhynchus;sidneyi;1;1;0;[11 - 16];1.2 - 1.6;triangulaire;absence;1;court;charnu;court;minces;plus courte;presence
+Ichidae;Ericerodes;gracilipes;1;1;1;[0 - 11];1.2 - 1.6;triangulaire;absence;1;court;variable;court;minces;plus courte;presence
+Ichidae;Ericerodes;hemphillii;1;0;0;[11 - 16];1.2 - 1.6;ovoide triangulaire;absence;1;variable;variable;long;minces;meme longueur;presence
+Ichidae;Eucinetops;blakianus;1;0;0;[0 - 11];1.2 - 1.6;;absence;2;tres court;charnu;court;charnues;meme longueur;presence
+Ichidae;Podochela;grossipes;1;1;0;[0 - 11];1.2 - 1.6;triangulaire;absence;1;court;charnu;court;minces;plus courte;presence
+Ichidae;Podochela;macrodera;1;1;0;[0 - 11];1.2 - 1.6;triangulaire;absence;1;court;charnu;court;minces;plus courte;presence
+Ichoididae;Aepinus;septemspinosus;1;1;0;;;ovoide triangulaire;presence arrondis;2;court;mince;court;minces;plus courte;
+Ichoididae;Arachnopsis;filipes;1;1;1;[0 - 11];0.9 - 1.2;ovoide triangulaire;;2;court;fort;court;minces;plus courte;presence
+Ichoididae;Batrachonotus;fragosus;1;1;1;[0 - 11];0.9 - 1.2;ovoide triangulaire;absence;1;court;fort;long;minces;plus courte;presence
+Ichoididae;Collodes;armatus;1;1;0;[0 - 11];1.2 - 1.6;ovoide triangulaire;;1;court;fort;court;minces;plus courte;presence
+Ichoididae;Euprogtha;rastellifera;1;1;1;[0 - 11];0.9 - 1.2;ovoide triangulaire;absence;2;court;fort;long;minces;plus courte;presence
+Ichoididae;Stenorhynchus;debilis;1;1;0;[11 - 16];0.9 - 1.2;triangulaire;absence;1;tres long;mince;long;minces;plus courte;presence
+Ichoididae;Stenorhynchus;seticornis;1;1;1;[16 - 30];0.9 - 1.2;triangulaire;absence;1;tres long;mince;long;minces;plus courte;presence
+Ichoididae;Stenorhynchus;yangi;1;1;1;;;triangulaire;absence;1;tres long;mince;long;minces;plus courte;presence
+Majidae;Thersandrus;compressus;1;1;0;[11 - 16];1.2 - 1.6;ovoide;absence;2;court;fort;long;charnues;plus longue;presence
+Mithracidae;Amphithrax;aculeatus;1;1;0;[30 - 80];0.5 - 0.9;ovale;presence;2;court;charnu;court;massives;meme longueur;presence
+Mithracidae;Amphithrax;hemphilli;1;1;0;[16 - 30];0.9 - 1.2;ovale;absence;2;tres court;fort;court;corpulentes;meme longueur;presence
+Mithracidae;Amphithrax;pilosus;1;0;0;[30 - 80];0.9 - 1.2;ovale;presence;2;court;fort;court;massives;meme longueur;presence
+Mithracidae;Hemus;cristulipes;1;1;0;[0 - 11];1.2 - 1.6;pentagole;absence;1;court;charnu;court;large;plus courte;presence
+Mithracidae;Mithraculus;cinctimanus;1;1;0;[16 - 30];0.9 - 1.2;ovoide;absence;2;court;fort;court;corpulentes;meme longueur;presence
+Mithracidae;Mithraculus;coryphe;1;1;0;[16 - 30];0.5 - 0.9;ovale;absence;2;tres court;massif;court;corpulentes;meme longueur;presence
+Mithracidae;Mithraculus;forceps;1;1;0;[16 - 30];0.5 - 0.9;arrondie;presence laterale;2;tres court;massif;long;corpulentes;plus longue;presence
+Mithracidae;Mithraculus;sculptus;1;1;0;[16 - 30];0.5 - 0.9;ovale;absence;2;tres court;massif;long;corpulentes;plus longue;presence
+Mithracidae;Mithrax;hispidus;1;1;0;80 - 125;0.5 - 0.9;arrondie;presence;2;tres court;fort;long;corpulentes;plus longue;presence
+Mithracidae;Mithrax;pleuracanthus;1;1;0;[30 - 80];0.9 - 1.2;arrondie;presence laterale;2;tres court;fort;long;corpulentes;plus longue;presence
+Mithracidae;Mithrax;tortugae;1;0;0;[16 - 30];0.5 - 0.9;arrondie;presence laterale;2;tres court;fort;long;corpulentes;plus longue;presence
+Mithracidae;Nemausa;acuticornis;1;1;0;[16 - 30];0.9 - 1.2;ovoide;presence;2;court;charnu;court;massives;meme longueur;presence
+Mithracidae;Nemausa;cornuta;1;1;1;[30 - 80];0.9 - 1.2;ovoide;presence;2;long;charnu;court;corpulentes;meme longueur;presence
+Mithracidae;Nemausa;spinipes;1;1;0;[0 - 11];1.2 - 1.6;ovoide;absence;2;long;charnu;court;charnues;plus courte;presence
+Mithracidae;Nola;holderi;1;1;0;[16 - 30];0.9 - 1.2;ovoide;absence;2;court;charnu;long;massives;plus longue;presence
+Mithracidae;Omalacantha;antillensis;1;1;0;[11 - 16];0.9 - 1.2;ovoide triangulaire;absence;2;court;fort;court;charnues;plus longue;presence
+Mithracidae;Omalacantha;bicornuta;1;1;0;[16 - 30];1.2 - 1.6;triangulaire;absence;2;court;charnu;court;charnues;plus longue;presence
+Mithracidae;Omalacantha;interrupta;1;1;0;[30 - 80];0 - 0.5;triangulaire;;2;court;charnu;court;charnues;plus longue;presence
+Mithracidae;Pitho;lherminieri;1;1;1;[16 - 30];0.9 - 1.2;ovoide;presence laterale;2;tres court;charnu;court;charnues;meme longueur;presence
+Mithracidae;Pitho;mirabilis;1;1;0;[16 - 30];0.9 - 1.2;ovoide;presence laterale;2;tres court;charnu;court;charnues;meme longueur;presence
+Mithracidae;Pitho;picteti;1;0;0;[16 - 30];0.9 - 1.2;ovoide;presence laterale;2;tres court;;;charnues;;presence
+Mithracidae;Teleophrys;ruber;1;1;0;[16 - 30];0.5 - 0.9;ovale;absence;2;tres court;massif;long;corpulentes;plus longue;presence
+Mithracidae;Thoe;aspera;1;0;0;[0 - 11];1.2 - 1.6;ovoide;presence laterale;2;court;fort;long;;;
+Mithracidae;Thoe;puella;1;1;0;[0 - 11];0.9 - 1.2;ovoide triangulaire;absence;2;court;fort;long;larges;plus longue;presence

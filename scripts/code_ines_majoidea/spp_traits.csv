@@ -1,0 +1,66 @@
+,spp,profondeur min (m),profondeur max (m),long Moy,larg Moy,rapport long/larg,forme carapace,pics sur la carapace,division du rostre,longueur du rostre,largeur chelipede,longueur chelipede,forme des pattes,longueur de la paire portant la pince par rapport a la longueur des autres pattes,poils et/ou epines sur les pattes
+1,Acanthonyx petiverii,0,-29,14.60,12.50,1.1680,pentagonale,absence,2,court,charnu,court,charnues,plus courte,presence
+2,Chorinus heros,-1,-50,46.90,32.30,1.4520,ovoide,presence laterale,2,court,charnu,long,charnues,plus longue,presence
+3,Epialtus bituberculatus,-1,-23,11.80,8.70,1.3563,pentagonale,absence,1,court,charnu,court,charnues,meme longueur,presence
+4,Epialtus dilatatus,0,-23,10.35,8.20,1.2622,pentagonale,absence,2,court,fort,long,charnues,plus longue,absence
+5,Epialtus longirostris,0,-54,7.25,5.15,1.4078,pentagonale,absence,1,court,fort,long,charnues,plus longue,presence
+6,Epialtus portoricensis,0,-27,7.15,5.05,1.4158,pentagonale,absence,1,court,fort,long,charnues,plus longue,absence
+7,Epialtus sulcirostris,0,-20,8.60,6.63,1.2965,ovoide,absence,1,court,fort,court,charnues,plus courte,presence
+8,Herbstia camptacantha,-1,-23,24.55,22.20,1.1059,ovale,presence,2,court,fort,long,charnues,plus longue,presence
+9,Herbstia edwardsii,0,-17,14.15,12.50,1.1320,ovale,absence,2,court,fort,long,charnues,plus longue,presence
+10,Macrocoeloma diplacanthum,-1,-29,28.33,21.67,1.3077,triangulaire,absence,2,long,charnu,court,charnues,meme longueur,presence
+11,Macrocoeloma eutheca,-30,-215,25.00,12.60,1.9841,triangulaire,absence,2,court,charnu,long,charnues,plus longue,NA
+12,Macrocoeloma laevigatum,0,-37,25.00,14.00,1.7857,ovoide,absence,2,court,fort,long,charnues,plus longue,presence
+13,Macrocoeloma nodipes,0,-77,52.00,49.40,1.0526,triangulaire,absence,2,court,charnu,long,charnues,meme longueur,presence
+14,Macrocoeloma subparellelum,0,-25,35.43,31.10,1.1393,triangulaire,absence,2,court,charnu,court,charnues,meme longueur,presence
+15,Macrocoeloma trispinosum,-1,-82,24.00,19.40,1.2371,triangulaire,absence,2,court,charnu,court,charnues,plus longue,presence
+16,Microlissa bicarinata,0,-100,8.25,8.60,0.9593,triangulaire,absence,2,court,fort,court,charnues,plus longue,NA
+17,Microlissa brasiliensis,-1,-85,16.60,15.00,1.1067,triangulaire,absence,2,court,fort,court,NA,NA,NA
+18,Notolopas brasiliensis,0,-30,16.00,10.50,1.5238,ronde,absence,2,long,fort,long,charnues,meme longueur,NA
+19,Pelia mutica,0,-51,11.20,8.80,1.2727,ovoide,absence,2,court,charnu,court,larges,plus courte,presence
+20,Pelia rotunda,0,-190,15.50,11.70,1.3248,ovoide,absence,2,court,charnu,court,larges,plus courte,presence
+21,Picroceroides tubularis,-17,-110,22.50,15.40,1.4610,ovoide,absence,2,long,charnu,long,minces,plus longue,presence
+22,Tyche emarginata,0,-100,35.00,21.00,1.6667,en 8,absence,2,court,fort,long,charnues,plus courte,presence
+23,Tyche lamellifrons,0,-18,18.85,12.20,1.5451,en 8,absence,2,court,charnu,court,minces,plus courte,presence
+24,Coryrhynchus algicola,-8,-66,19.00,13.00,1.4615,triangulaire,absence,1,court,charnu,long,minces,plus courte,presence
+25,Coryrhynchus lamelligerus,-38,-110,19.00,14.25,1.3333,triangulaire,absence,1,court,mince,long,minces,plus courte,presence
+26,Coryrhynchus riisei,-1,-140,21.43,17.40,1.2318,triangulaire,absence,1,variable,charnu,court,minces,plus courte,presence
+27,Coryrhynchus sidneyi,0,-190,15.65,11.85,1.3207,triangulaire,absence,1,court,charnu,court,minces,plus courte,presence
+28,Ericerodes gracilipes,-2,-220,12.70,8.70,1.4598,triangulaire,absence,1,court,variable,court,minces,plus courte,presence
+29,Ericerodes hemphillii,0,-12,21.15,14.65,1.4437,ovoide triangulaire,absence,1,variable,variable,long,minces,meme longueur,presence
+30,Eucinetops blakianus,-2,-29,5.45,3.95,1.3797,NA,absence,2,tres court,charnu,court,charnues,meme longueur,presence
+31,Podochela grossipes,0,-100,14.20,10.40,1.3654,triangulaire,absence,1,court,charnu,court,minces,plus courte,presence
+32,Podochela macrodera,0,-100,13.05,9.90,1.3182,triangulaire,absence,1,court,charnu,court,minces,plus courte,presence
+33,Aepinus septemspinosus,-10,-95,NA,NA,NA,ovoide triangulaire,presence arrondis,2,court,mince,court,minces,plus courte,NA
+34,Arachnopsis filipes,-27,-240,6.00,5.50,1.0909,ovoide triangulaire,NA,2,court,fort,court,minces,plus courte,presence
+35,Batrachonotus fragosus,-1,-247,7.10,6.10,1.1639,ovoide triangulaire,absence,1,court,fort,long,minces,plus courte,presence
+36,Collodes armatus,-20,-84,9.00,6.80,1.3235,ovoide triangulaire,NA,1,court,fort,court,minces,plus courte,presence
+37,Euprognatha rastellifera,-10,-708,8.80,8.47,1.0394,ovoide triangulaire,absence,2,court,fort,long,minces,plus courte,presence
+38,Stenorhynchus debilis,-23,-60,14.00,12.60,1.1111,triangulaire,absence,1,tres long,mince,long,minces,plus courte,presence
+39,Stenorhynchus seticornis,0,-366,21.00,17.50,1.2000,triangulaire,absence,1,tres long,mince,long,minces,plus courte,presence
+40,Stenorhynchus yangi,-31,-450,NA,NA,NA,triangulaire,absence,1,tres long,mince,long,minces,plus courte,presence
+41,Thersandrus compressus,0,-100,23.00,16.00,1.4375,ovoide,absence,2,court,fort,long,charnues,plus longue,presence
+42,Amphithrax aculeatus,0,-190,51.00,60.00,0.8500,ovale,presence,2,court,charnu,court,massives,meme longueur,presence
+43,Amphithrax hemphilli,0,-60,21.74,21.37,1.0174,ovale,absence,2,tres court,fort,court,corpulentes,meme longueur,presence
+44,Amphithrax pilosus,-1,-15,68.10,70.00,0.9729,ovale,presence,2,court,fort,court,massives,meme longueur,presence
+45,Hemus cristulipes,-6,-70,6.00,4.00,1.5000,pentagonale,absence,1,court,charnu,court,large,plus courte,presence
+46,Mithraculus cinctimanus,0,-190,20.50,19.70,1.0406,ovoide,absence,2,court,fort,court,corpulentes,meme longueur,presence
+47,Mithraculus coryphe,0,-77,20.00,26.00,0.7692,ovale,absence,2,tres court,massif,court,corpulentes,meme longueur,presence
+48,Mithraculus forceps,0,-90,21.00,24.60,0.8537,arrondie,presence laterale,2,tres court,massif,long,corpulentes,plus longue,presence
+49,Mithraculus sculptus,0,-61,24.00,26.70,0.8989,ovale,absence,2,tres court,massif,long,corpulentes,plus longue,presence
+50,Mithrax hispidus,-1,-65,102.20,124.00,0.8242,arrondie,presence,2,tres court,fort,long,corpulentes,plus longue,presence
+51,Mithrax pleuracanthus,0,-51,36.30,38.20,0.9503,arrondie,presence laterale,2,tres court,fort,long,corpulentes,plus longue,presence
+52,Mithrax tortugae,-1,-26,19.70,22.10,0.8914,arrondie,presence laterale,2,tres court,fort,long,corpulentes,plus longue,presence
+53,Nemausa acuticornis,-1,-103,19.35,16.40,1.1799,ovoide,presence,2,court,charnu,court,massives,meme longueur,presence
+54,Nemausa cornuta,-15,-458,62.83,58.33,1.0771,ovoide,presence,2,long,charnu,court,corpulentes,meme longueur,presence
+55,Nemausa spinipes,-2,-90,11.00,8.20,1.3415,ovoide,absence,2,long,charnu,court,charnues,plus courte,presence
+56,Nonala holderi,0,-60,25.30,24.40,1.0369,ovoide,absence,2,court,charnu,long,massives,plus longue,presence
+57,Omalacantha antillensis,0,-38,13.30,12.25,1.0857,ovoide triangulaire,absence,2,court,fort,court,charnues,plus longue,presence
+58,Omalacantha bicornuta,0,-70,30.20,23.60,1.2797,triangulaire,absence,2,court,charnu,court,charnues,plus longue,presence
+59,Omalacantha interrupta,0,-50,11.80,47.65,0.2476,triangulaire,NA,2,court,charnu,court,charnues,plus longue,presence
+60,Pitho lherminieri,-1,-220,19.53,18.63,1.0483,ovoide,presence laterale,2,tres court,charnu,court,charnues,meme longueur,presence
+61,Pitho mirabilis,0,-100,18.25,17.40,1.0489,ovoide,presence laterale,2,tres court,charnu,court,charnues,meme longueur,presence
+62,Pitho picteti,0,-6,21.20,19.30,1.0984,ovoide,presence laterale,2,tres court,NA,NA,charnues,NA,presence
+63,Teleophrys ruber,0,-46,16.00,19.90,0.8040,ovale,absence,2,tres court,massif,long,corpulentes,plus longue,presence
+64,Thoe aspera,0,-23,10.00,8.20,1.2195,ovoide,presence laterale,2,court,fort,long,NA,NA,NA
+65,Thoe puella,0,-40,11.80,10.20,1.1569,ovoide triangulaire,absence,2,court,fort,long,larges,plus longue,presence

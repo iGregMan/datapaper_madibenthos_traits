@@ -106,7 +106,7 @@ lapply(phyla, dim) # Nombre d'évènements de collecte
 
 species <- read.csv(here("data", "raw", "occ", "mtq_invmar_clean.csv")) %>%
   add_column(
-    superfamily = ifelse(o$family == "Muricidae", "Muricoidea", "Majoidea")
+    superfamily = ifelse(.$family == "Muricidae", "Muricoidea", "Majoidea")
   ) %>%
   split(., .$superfamily)
 
@@ -128,9 +128,47 @@ names(bathy) <- "depth"
 # polygones
 plg <- st_read(here("data", "raw", "shp", "polygons_MTQ.shp"))
 
-ggplot() +
-  geom_stars(data = bathy) +
-  geom_sf(data = plg) +
-  geom_sf(data = stn) +
-  xlab("Longitude") +
-  ylab("Latitude")
+# ggplot() +
+#   geom_stars(data = bathy) +
+#   geom_sf(data = plg) +
+#   geom_sf(data = stn) +
+#   xlab("Longitude") +
+#   ylab("Latitude")
+
+# Informations sur les habitats :
+
+# Import de HABREF
+habref <- read.csv(
+  here("data", "raw", "hab", "HABREF_70.csv"),
+  sep = ";"
+) %>%
+  filter(CD_TYPO == 108)
+
+# Import de le table de correspondance habitats marins benthiques de Martinique
+# / nomenclature de HABREF (CD_HAB)
+hab <- read_csv(
+  here("data", "raw", "hab", "typo_martinique_mer_70.csv"),
+  show_col_types = F
+)
+
+# Anciences codes et nouveaux codes habitats (LB_CODE)
+lb <- read_csv(
+  here("data", "raw", "hab", "typo_martinique_mer_70_intitule_vi_vf_jd_sa.csv"),
+  show_col_types = F
+) %>%
+  select(LB_CODEi = `Code initial`, LB_CODE = `Code finale`)
+
+# Import de la correspondance stations / habitats
+cc <- read.csv(
+  here("data", "raw", "hab", "correspondance_station_hab.csv"),
+  # show_col_types = F,
+  sep = ";"
+) %>%
+  select(LB_CODEi = Code_habitat, STATION_REF)
+
+# Correspondance station/station_ref
+stn_ref <- read_csv(
+  here("data", "raw", "hab", "correspondance_station_station_ref.csv"),
+  show_col_types = F
+) %>%
+  select(STATION, STATION_REF)

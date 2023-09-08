@@ -191,6 +191,22 @@ TB <- lapply(
       unlist() %>%
       unique() %>%
       sort()
-    cbind(nn, do.call(rbind, l))
+    cbind(scientificName = nn, do.call(rbind, l))
+  }
+)
+names(TB) <- names(species)
+
+# Sauvegarde
+lapply(
+  names(TB),
+  \(sf) {
+    tb <- TB[[sf]]
+    write.csv(
+      tb,
+      here(
+        "data", "raw", "hab",
+        paste("table", tolower(sf), "habitats", sep = "_") %>% paste0(".csv")
+      )
+    )
   }
 )

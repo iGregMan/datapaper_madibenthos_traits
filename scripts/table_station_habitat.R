@@ -41,9 +41,12 @@ names(cdhabs) <- paste("CD_HAB", c("geo", "sub", "etg"), sep = "_")
 hs <- hs %>%
   cbind(cdhabs) %>%
   select(
-    "LB_CODEi", "STATION_REF", "LB_CODE", "CD_HAB", "LB_CODE_geo",
-    "CD_HAB_geo", "LB_CODE_sub", "CD_HAB_sub", "LB_CODE_etg", "CD_HAB_etg"
-    )
+    "LB_CODEi", "STATION_REF",
+    "LB_CODE", "CD_HAB",
+    "LB_CODE_etg", "CD_HAB_etg",
+    "LB_CODE_sub", "CD_HAB_sub",
+    "LB_CODE_geo", "CD_HAB_geo"
+  )
 
 
 # Correspondance avec stations de collecte Majo/Muri

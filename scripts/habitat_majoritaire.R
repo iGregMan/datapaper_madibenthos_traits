@@ -5,6 +5,9 @@ R <- lapply(
       sort(unique(species[[sf]]$scientificName)),
       \(sp) {
 
+        # sf <- "Majoidea"
+        # sp <- "Batrachonotus fragosus"
+
         print(sf)
         print(sp)
 
@@ -42,74 +45,103 @@ R <- lapply(
 
         tb_sp <- tb_sp %>% left_join(tb_poids)
 
-        # habitat le plus fréquent, deuxième habitat le plus fréquent
-        tt <- tb_sp %>% select(
-          CD_HAB, poids
-        ) %>%
-          group_by(CD_HAB) %>%
-          summarise(somme = sum(poids))
-        tt <- tt[order(tt$somme, decreasing = T), ]
-        hab_freq_1 <- tt$CD_HAB[1]
-        hab_freq_2 <- tt$CD_HAB[2]
+        if (nrow(tb_sp) == 1) {
 
-        # Étage, Étage x Substrat et Étage x substrat x géomorphologie majoritaires
-        f <- tb_sp$CD_HAB_etg
-        v <- c()
-        clmns <- c("CD_HAB_etg", "CD_HAB_sub", "CD_HAB_geo")
-        for (i in seq_along(clmns)) {
+          # Ligne finale pour l'espèce
+          row_sp <- c(
+            CD_HAB_maj1 = tb_sp$CD_HAB,
+            CD_HAB_maj2 = NA,
+            CD_HAB_etg  = tb_sp$CD_HAB_etg,
+            CD_HAB_sub  = tb_sp$CD_HAB_sub,
+            CD_HAB_geo  = tb_sp$CD_HAB_geo
+          )
 
-          clmn0 <- if (i == 1) {
-            clmns[[i]]
-          } else {
-            clmns[[i - 1]]
-          }
+          return(row_sp)
 
-          clmn <- clmns[[i]]
+        } else if (nrow(tb_sp) == 2) {
 
-          # Table cd_hab, prévalence et effectif de chaque cd_hab
+          # Ligne finale pour l'espèce
+          row_sp <- c(
+            CD_HAB_maj1 = tb_sp$CD_HAB,
+            CD_HAB_maj2 = NA,
+            CD_HAB_etg  = tb_sp$CD_HAB_etg,
+            CD_HAB_sub  = tb_sp$CD_HAB_sub,
+            CD_HAB_geo  = tb_sp$CD_HAB_geo
+          )
+
+          return(row_sp)
+        } else {
+
+          # habitat le plus fréquent, deuxième habitat le plus fréquent
           tt <- tb_sp %>%
-            filter(get(clmn0) %in% f) %>%
-            select(all_of(c(clmn, "poids"))) %>%
-            group_by(get(clmn)) %>%
-            summarise(somme = sum(poids), effectif = n())
+            select(CD_HAB, poids) %>%
+            group_by(CD_HAB) %>%
+            summarise(somme = sum(poids))
           tt <- tt[order(tt$somme, decreasing = T), ]
-          names(tt)[1] <- clmn
+          hab_freq_1 <- tt$CD_HAB[1]
+          hab_freq_2 <- tt$CD_HAB[2]
 
-          # Y a-t-il au moins une catégorie au-dessus de 5 d'effectif ?
-          bool5 <- sum(tt$effectif >= 5) > 0
+          # Étage, Étage x Substrat et Étage x substrat x géomorphologie majoritaires
+          f <- tb_sp$CD_HAB_etg
+          v <- c()
+          clmns <- c("CD_HAB_etg", "CD_HAB_sub", "CD_HAB_geo")
 
-          tf <- tt %>% filter(effectif >= 5)
+          for (i in seq_along(clmns)) {
 
-          print(tf)
+            clmn0 <- if (i == 1) { clmns[[i]] } else { clmns[[i - 1]] }
+            clmn <- clmns[[i]]
 
-          cd_hab_maj <- if (nrow(tf) == 1) {
-            tf[[clmn]]
-          } else {
-            tf$freq <- (tf$somme/sum(tf$somme))*100
-            print(tf)
-            res <- chisq.test(tf$freq)
-            tf[[clmn]][which.max(res$residuals)]
+            # Table cd_hab, prévalence et effectif de chaque cd_hab
+            tt <- tb_sp %>%
+              filter(get(clmn0) %in% f) %>%
+              select(all_of(c(clmn, "poids"))) %>%
+              group_by(get(clmn)) %>%
+              summarise(somme = sum(poids), effectif = n())
+            tt <- tt[order(tt$somme, decreasing = T), ]
+            names(tt)[1] <- clmn
+
+            # Y a-t-il au moins une catégorie au-dessus de 5 d'effectif ?
+            bool5 <- sum(tt$effectif >= 5) > 0
+
+            cd_hab_maj <- if (nrow(tt) == 1) {
+              tt[1]
+            } else if (nrow(tt) != 1 & !bool5) {
+              tt[1]
+            } else {
+              tf <- tt %>% filter(effectif >= 5)
+
+              print(tf)
+
+              cd_hab_maj <- if (nrow(tf) == 1) {
+                tf[[clmn]]
+              } else {
+                tf$freq <- (tf$somme/sum(tf$somme))*100
+                print(tf)
+                res <- chisq.test(tf$freq)
+                tf[[clmn]][which.max(res$residuals)]
+              }
+            }
+
+            f <- cd_hab_maj
+            v <- c(v, cd_hab_maj)
+
           }
 
-          f <- cd_hab_maj
-          v <- c(v, cd_hab_maj)
+          # Ligne finale pour l'espèce
+          row_sp <- c(
+            CD_HAB_maj1 = hab_freq_1,
+            CD_HAB_maj2 = hab_freq_2,
+            CD_HAB_etg  = v[[1]],
+            CD_HAB_sub  = v[[2]],
+            CD_HAB_geo  = v[[3]]
+          )
+
+          return(row_sp)
 
         }
 
-        # Ligne finale pour l'espèce
-        row_sp <- c(
-          CD_HAB_maj1 = hab_freq_1,
-          CD_HAB_maj2 = hab_freq_2,
-          CD_HAB_etg  = v[[1]],
-          CD_HAB_sub  = v[[2]],
-          CD_HAB_geo  = v[[3]]
-        )
-
-        return(row_sp)
 
 
-
-      }
-    )
-  }
-)
+      })
+  })
+names(R) <- names(species)

@@ -5,8 +5,8 @@ R <- lapply(
       sort(unique(species[[sf]]$scientificName)),
       \(sp) {
 
-        # sf <- "Majoidea"
-        # sp <- "Collodes armatus"
+        # sf <- "Muricoidea"
+        # sp <- "Dermomurex alabastrum"
 
         print(sf)
         print(sp)
@@ -81,11 +81,11 @@ R <- lapply(
 
             # Ligne finale pour l'espèce
             row_sp <- c(
-              CD_HAB_maj1 = paste(tb_sp$CD_HAB, collapse = "/"),
+              CD_HAB_maj1 = paste(unique(tb_sp$CD_HAB), collapse = "/"),
               CD_HAB_maj2 = NA,
-              CD_HAB_etg  = paste(tb_sp$CD_HAB_etg, collapse = "/"),
-              CD_HAB_sub  = paste(tb_sp$CD_HAB_sub, collapse = "/"),
-              CD_HAB_geo  = paste(tb_sp$CD_HAB_geo, collapse = "/")
+              CD_HAB_etg  = paste(unique(tb_sp$CD_HAB_etg), collapse = "/"),
+              CD_HAB_sub  = paste(unique(tb_sp$CD_HAB_sub), collapse = "/"),
+              CD_HAB_geo  = paste(unique(tb_sp$CD_HAB_geo), collapse = "/")
             )
 
             return(row_sp)
@@ -104,13 +104,13 @@ R <- lapply(
               filter(somme != max(tt$somme)) %>%
               filter(., somme == max(.$somme))
             hab_freq_1 <- if (nrow(tt1) > 1) {
-              paste(tt1$CD_HAB, collapse = "/")
+              paste(unique(tt1$CD_HAB), collapse = "/")
             } else {
               tt1$CD_HAB
             }
             hab_freq_2 <- if (nrow(tt2) > 0) {
               if (nrow(tt2) > 0) {
-                paste(tt2$CD_HAB, collapse = "/")
+                paste(unique(tt2$CD_HAB), collapse = "/")
               } else if (nrow(tt2) > 1) {
                 tt2$CD_HAB
               }

@@ -205,7 +205,8 @@ lapply(
       tb,
       here(
         "data", "raw", "hab",
-        paste("table", tolower(sf), "habitats", sep = "_") %>% paste0(".csv")
+        paste("table", tolower(sf), "habitats", "cd_hab", sep = "_") %>%
+          paste0(".csv")
       )
     )
   }

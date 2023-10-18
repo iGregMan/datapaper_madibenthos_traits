@@ -6,7 +6,7 @@ R <- lapply(
       \(sp) {
 
         # sf <- "Muricoidea"
-        # sp <- "Dermomurex alabastrum"
+        # sp <- "Cytharomorula grayi"
 
         print(sf)
         print(sp)

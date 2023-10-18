@@ -172,3 +172,12 @@ stn_ref <- read_csv(
   show_col_types = F
 ) %>%
   select(STATION, STATION_REF)
+
+# Mesures ----
+mur_mesures <- read.csv(here("data", "tidy", "muricidae_mesures_metriques.csv"))
+
+# Traits ----
+tr <- list.files(here("data", "raw", "traits"), full.names = T) %>%
+  lapply(read.csv, fileEncoding = "UTF-16")
+names(tr) <- c("Majoidea", "Muricoidea")
+

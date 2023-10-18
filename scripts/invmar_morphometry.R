@@ -1,10 +1,6 @@
-source(here::here("scripts", "boot.R"))
-source(here("scripts", "FUN_evplot.R"))
-source(here("scripts", "FUN_chc2out.R"))
-
 # import
 shape_initial <- chc2Out(
-  here("data", "raw", "ventral_orientation.chc"), 
+  here("data", "raw", "ventral_orientation.chc"),
   skip = 10
 )
 my_shape <- "ventral"
@@ -21,14 +17,14 @@ shape_calibration  <- calibrate_harmonicpower_efourier(
 
 saveRDS(
   shape_calibration,
-  here("data", "tidy", 
+  here("data", "tidy",
        paste(
          "calibration", my_shape, "orientated.rds", collapse = "_"
        )
   )
 )
 shape_calibration <- readRDS(
-  here("data", "tidy", 
+  here("data", "tidy",
        paste(
          "calibration", my_shape, "orientated.rds", collapse = "_"
        )
@@ -68,23 +64,23 @@ ggplot(shape_calibration, mapping=aes(x=harmonics)) +
 
 ggsave(
   here(
-    "figures", 
+    "figures",
     paste(
       "harmonics", my_shape, "muricidae.png", collapse = "_"
     )
-  ),  
-  width = 16, 
-  height = 10, 
+  ),
+  width = 16,
+  height = 10,
   units = "cm"
 )
 
 # traitement de la position des formes
 shape_centered <- coo_center(shape_initial)
-shape_scaled   <- coo_scale(shape_centered)   
-shape_aligned  <- coo_align(shape_scaled) 
+shape_scaled   <- coo_scale(shape_centered)
+shape_aligned  <- coo_align(shape_scaled)
 shape_slided   <- coo_slidedirection(shape_aligned, "W")
 
-panel(shape_initial)  
+panel(shape_initial)
 panel(shape_centered)
 panel(shape_scaled)
 panel(shape_aligned)
@@ -94,16 +90,16 @@ stack(shape_slided)
 pile(shape_slided)
 
 # analyse de fourier et PCA
-shape_ellipse_fourier <- efourier(shape_slided, nb.h = shape_harmonics, norm = FALSE) 
+shape_ellipse_fourier <- efourier(shape_slided, nb.h = shape_harmonics, norm = FALSE)
 shape_pca <- Momocs::PCA(
   shape_ellipse_fourier, scale. = FALSE, center = TRUE
 )
 
 # modèle des bâtons brisés
-shape_evplot <- shape_pca$sdev^2  
+shape_evplot <- shape_pca$sdev^2
 png(
   here(
-    "figures", 
+    "figures",
     paste(
       "evplot", my_shape, "muricidae.png", collapse = "_"
     )
@@ -120,11 +116,11 @@ shape_pca$eig <- shape_pca$x
 # x11()
 # par(mar = rep(0, 4))
 # plot_PCA(shape_pca)
-# shape_ellipse_fourier %>% 
-#   FactoMineR::PCA() %>% 
+# shape_ellipse_fourier %>%
+#   FactoMineR::PCA() %>%
 #   plot_PCA(
-#     ~col3, 
-#     labelpoints = TRUE, 
+#     ~col3,
+#     labelpoints = TRUE,
 #     points = "o"
 #   )
 # dev.off()
@@ -133,15 +129,15 @@ shape_pca$eig <- shape_pca$x
 # paramètres de morphospace_position
 # "range", "full", "circle", "xy", "range_axes", "full_axes"
 plot_PCA(
-  shape_pca, 
-  zoom                 = 1, 
-  eigen                = FALSE, 
+  shape_pca,
+  zoom                 = 1,
+  eigen                = FALSE,
   morphospace_position = "range",
-  chullfilled          = TRUE, 
+  chullfilled          = TRUE,
   labelpoints          = TRUE
 )
 # layer_labelpoints(
-#   list(shape_pca$fac$col4), 
+#   list(shape_pca$fac$col4),
 #   col = shape_pca$fac$col3
 # )
 plot_PCA(shape_pca, axes = c(1,3))
